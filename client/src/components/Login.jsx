@@ -33,7 +33,6 @@ export default function Login({ isFirstSetup, onLogin }) {
             onError={() => setLogoError(true)}
           />
         )}
-        <h1>LastCopy</h1>
         <p>
           {isFirstSetup
             ? 'Автоматическое резервное копирование сайтов и серверов на ваш компьютер без сложной настройки. Первый запуск: задайте пароль.'

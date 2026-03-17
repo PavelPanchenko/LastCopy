@@ -191,11 +191,11 @@ export default function History() {
                       ) : (
                         (site.hasFiles || site.hasDb) && (
                           <button
-                            className="btn-icon"
+                            className="btn-secondary btn-sm"
                             title="Скачать всё (файлы и БД)"
                             onClick={() => handleDownloadAllForSite(entry, site)}
                           >
-                            ⇩
+                            ↓ Скачать все
                           </button>
                         )
                       )}
