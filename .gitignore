@@ -1,0 +1,29 @@
+node_modules/
+client/node_modules/
+backups/
+*.log
+.DS_Store
+
+# Runtime / build output
+dist/
+release/
+out/
+coverage/
+client/dist/
+
+# Generated frontend bundle (keep public static files)
+server/public/assets/
+
+# Environment and local config
+.env
+.env.*
+!.env.example
+config.local.json
+
+# Secrets / machine-specific config
+config.json
+
+# IDE / OS noise
+.vscode/
+.idea/
+Thumbs.db

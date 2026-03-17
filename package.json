@@ -1,0 +1,50 @@
+{
+  "name": "arkiv",
+  "version": "1.0.0",
+  "private": true,
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "concurrently \"node server/index.js\" \"npm run dev --prefix client\"",
+    "desktop": "electron .",
+    "build:web": "npm run build --prefix client -- --outDir ../server/public --emptyOutDir",
+    "build:win": "npm run build:web && electron-builder --win nsis",
+    "build:mac": "npm run build:web && electron-builder --mac dmg",
+    "build": "npm run build:web",
+    "install:all": "npm install && cd client && npm install"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "ssh2": "^1.16.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "electron": "^37.4.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.lastcopy.app",
+    "productName": "LastCopy",
+    "directories": {
+      "buildResources": "build"
+    },
+    "files": [
+      "electron/**",
+      "server/**",
+      "client/public/**",
+      "config.json",
+      "package.json"
+    ],
+    "asar": true,
+    "mac": {
+      "target": "dmg",
+      "icon": "icons/icon.icns"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "icons/icon.ico"
+    }
+  }
+}
